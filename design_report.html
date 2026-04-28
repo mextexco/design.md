@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+            background-color: #061a0c; /* Warp Deep Emerald */
+        }
+        body {
+            margin: 0;
+            padding: 40px;
+            background-color: #061a0c;
+            color: #ffffff;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            line-height: 1.6;
+            position: relative;
+            min-height: 297mm;
+        }
+        /* Grid Overlay */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            font-size: 24pt;
+            border-bottom: 2px solid #00ff41;
+            padding-bottom: 10px;
+            margin-top: 0;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+        .status-bar {
+            background: rgba(255, 255, 255, 0.03);
+            border: 0.5px solid rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            margin-bottom: 30px;
+            font-size: 10pt;
+        }
+        .status-bar span {
+            color: #00ff41;
+            margin-right: 20px;
+        }
+        h2 {
+            font-size: 16pt;
+            color: #ffffff;
+            margin-top: 40px;
+            border-left: 4px solid #00ff41;
+            padding-left: 12px;
+            text-transform: uppercase;
+        }
+        p, li {
+            font-size: 11pt;
+            color: #ffffff;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        li::before {
+            content: "[■] ";
+            color: #00ff41;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        th, td {
+            border: 0.5px solid rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: rgba(0, 255, 65, 0.1);
+            color: #00ff41;
+        }
+        .code-block {
+            background: #000000;
+            border: 1px solid #00ff41;
+            padding: 15px;
+            font-family: monospace;
+            margin: 20px 0;
+            color: #00ff41;
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: right;
+            font-style: italic;
+            font-size: 9pt;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>⚡ REPORT: WHAT_IS_DESIGN.MD</h1>
+        <div class="status-bar">
+            <span>ID: DOC-774-ALPHA</span>
+            <span>STATUS: DECRYPTED</span>
+            <span>THEME: WARP_FUTURE_EMERALD</span>
+        </div>
+
+        <h2>■ OVERVIEW</h2>
+        <p>
+            DESIGN.md とは、AIエージェント（Google Stitchなど）にプロジェクト固有のデザインシステムを理解させるための「AI専用の指示書」です。
+            人間が読むドキュメントとしての役割だけでなく、AIがデザインの一貫性を保つための「正解」として機能します。
+        </p>
+
+        <h2>■ KEY_ROLES</h2>
+        <ul>
+            <li>AIとの共通言語: 曖昧なプロンプトではなく、明確なトークンでルールを伝達します。</li>
+            <li>一貫性の維持: 新しい画面を生成しても、カラーや角丸のピクセル数が崩れません。</li>
+            <li>ポータビリティ: プレーンテキストなので、CursorやClaude Code等への持ち運びが容易です。</li>
+        </ul>
+
+        <h2>■ TECHNICAL_STRUCTURE</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>SECTION</th>
+                    <th>FUNCTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Creative North Star</td>
+                    <td>デザインの核となる「北極星（概念）」の定義</td>
+                </tr>
+                <tr>
+                    <td>Colors & Typography</td>
+                    <td>カラーパレットとタイポグラフィの厳密な指定</td>
+                </tr>
+                <tr>
+                    <td>Components</td>
+                    <td>ボタンや入力フォーム等のスタイル定義</td>
+                </tr>
+                <tr>
+                    <td>Do's and Don'ts</td>
+                    <td>AIが「すべきこと」と「避けるべきこと」の明文化</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>■ EXECUTION_LOG</h2>
+        <div class="code-block">
+            $ read --file DESIGN.md<br>
+            [SUCCESS] Theme: Warp Future Emerald recognized.<br>
+            [SUCCESS] Background Grid: 20px interval activated.<br>
+            [SUCCESS] Font: Monospace rendering enabled.
+        </div>
+
+        <h2>■ CONCLUSION</h2>
+        <p>
+            DESIGN.md は、デザイナーの「こだわり」をAIが理解できる言葉に変える架け橋です。
+            これがあることで、AIは単なる自動生成ツールではなく、デザインの文脈を理解する強力なパートナーへと進化します。
+        </p>
+
+        <div class="footer">
+            EOF // End of File_
+        </div>
+    </div>
+</body>
+</html>
